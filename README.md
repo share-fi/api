@@ -1,4 +1,4 @@
-# share-fi
+# wirefy
 the social network that keeps on giving
 
 
