@@ -16,8 +16,6 @@ html lang="en"
     /! Custom styles for this template
     link href="css/cover.css" rel="stylesheet" /
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
-<<<<<<< HEAD
-=======
     script src="js/ie10-viewport-bug-workaround.js"
     css:
       a {
@@ -108,7 +106,7 @@ html lang="en"
     script src="js/bootstrap.min.js"
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
     script src="js/ie10-viewport-bug-workaround.js"
-                b.nav-link.active Welcome, test
+                b.nav-link.active Welcome, #{@username || "User"}
                 a.nav-link.active href=("/logout")  Log Out
               div style="padding-top:20%"
               div class="dboardDiv"
@@ -205,4 +203,4 @@ html lang="en"
 
     script src="/js/jquery.min.js"
     javascript:
-      | window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+      window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')

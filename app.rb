@@ -117,8 +117,8 @@ get '/logout' do
 end
 
 post '/login' do
-	if userTable.has_key?(params[:username])
-    user = userTable[params[:username]]
+	if User.all.has_key?(params[:username])
+    user = User.all[params[:username]]
     if user[:passwordhash] == BCrypt::Engine.hash_secret(params[:password], user[:salt])
       session[:username] = params[:username]
       redirect "/"
