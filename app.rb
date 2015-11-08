@@ -110,6 +110,10 @@ get '/logout' do
 	redirect '/'
 end
 
+get '/error' do
+	slim :error
+end
+
 post '/login' do
 	# FUCK EVERYTHING i hat etime crunch
 	redirect '/dashboard'

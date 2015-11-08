@@ -87,27 +87,11 @@ html lang="en"
 
               h3.masthead-brand style="padding-top:1%" Wirefy
               nav.nav.nav-masthead
+                b.nav-link.active Welcome, test
+
                 a.nav-link.active href=("/dashboard")  Home
                 a.nav-link href=("/logout")  Log Out
-          .inner.cover
-            .inner-container
-              .inner-frame1
-                .inner-tab Browse
-                .inner-tab Local
-                .inner-tab Recent
-              .inner-frame2
-                h3.inner-tab-head Header
-                p.inner-tab-info Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
-    /! Bootstrap core JavaScript==================================================
-    /! Placed at the end of the document so the pages load faster
-    script src="js/jquery.min.js"
-    javascript:
-      window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    script src="js/bootstrap.min.js"
-    /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src="js/ie10-viewport-bug-workaround.js"
-                b.nav-link.active Welcome, test
-                a.nav-link.active href=("/logout")  Log Out
+          
               div style="padding-top:20%"
               div class="dboardDiv" 
                 br style="font-size: 3px"
@@ -115,7 +99,7 @@ html lang="en"
                 a data-toggle="tab" href="#local"
                   div class="sideBar, local, inner-tab active" style="margin:12%;"
                     divide Local
-                a data-toggle="tab" href="#browse"
+                a data-toggle="tab" href="#browse" 
                   div class="sideBar, browse, inner-tab" style="margin:12%;"
                     divide Browse
                 a data-toggle="tab" href="#search"
@@ -165,7 +149,7 @@ html lang="en"
                   script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD82bQbek9pGpOGd7QKv9iJfEwkd8QygJA&signed_in=true&callback=initMap"
 
                 #browse.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;"
-                  h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;" Browse
+                  h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;width:500px;" Browse
                   table.table.table-striped style="color:#333"
                     thead
                         th 1
@@ -188,10 +172,10 @@ html lang="en"
                         th SSID
                         th Password
                         th Location
-                #search.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;"
+                #search.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;width:500px;"
                   h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;" Search
                   p Some content in menu 2.
-                #create.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;width:300px;height:80%;"
+                #create.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;width:500px;height:80%;"
                   a href="/create"
                     button.btn.btn-info
                       o create
