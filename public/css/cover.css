@@ -98,10 +98,6 @@ body {
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
-a:hover {
-  background-color: red;
-}
-
 .sideBar{
     margin-bottom: 100px;
     display:inline-block;
