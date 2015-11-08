@@ -32,7 +32,7 @@ get '/'  do
 end
 
 get '/dashboard' do
-	slim :dashboard4
+	slim :dashboard
 end
 
 # Get Sign up Page
@@ -120,4 +120,3 @@ post '/login' do
 	# FUCK EVERYTHING i hat etime crunch
 	redirect '/dashboard'
 end
-
