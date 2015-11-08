@@ -29,12 +29,12 @@ html lang="en"
 
             h3.masthead-brand style="padding-top:1%" Wirefy
             nav.nav.nav-masthead
-              b.nav-link.active Welcome, Ben
+              b.nav-link.active Welcome
               a.nav-link.active href=("/logout")  Log Out
             div style="padding-top:20%"
-            div class="dboardDiv" 
+            div class="dboardDiv"
               br style="font-size: 3px"
-              
+
               a data-toggle="tab" href="#local"
                 div class="sideBar, local, inner-tab active" style="margin:12%;"
                   divide Local
@@ -47,7 +47,7 @@ html lang="en"
               a data-toggle="tab" href="#create"
                 div class="sideBar, search, inner-tab" style="margin:12%;"
                   divide Create
-                  
+
             div class="tab-content, dboardMain" style="position:fixed; background-color:#fff;"
                 br
                 #local.tab-pane.fade.in.active style="position:absolute;background-color:#fff; padding: 10px;"
@@ -57,7 +57,7 @@ html lang="en"
                      function initMap() {
                        var map = new google.maps.Map(document.getElementById('map'), {
                          center: {lat: -34.397, lng: 150.644},
-                         zoom: 17
+                         zoom: 14
                        });
 
                        if (navigator.geolocation) {
@@ -67,21 +67,9 @@ html lang="en"
                              lng: position.coords.longitude
                            };
 
-                           map.setCenter(pos);                           
-                           var mapOptions = {
-                              //give latitude and long
-                              center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
-                              zoom: 14,
-                              mapTypeId: google.maps.MapTypeId.ROADMAP
-                           };
-                           
-                           var mozLatLng = new google.maps.LatLng("47.6061867","-122.3358261");
-                           
-                           var marker = new google.maps.Marker({
-                              position: pos,
-                              map: map,
-                              title: "Your Location"
-                          });
+
+                           map.setCenter(pos);
+                           markOutLocation(position.coords.latitude, position.coords.latitude);
 
                          }, function() {
                            handleLocationError(true, infoWindow, map.getCenter());
@@ -99,45 +87,42 @@ html lang="en"
                      }
                   script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD82bQbek9pGpOGd7QKv9iJfEwkd8QygJA&signed_in=true&callback=initMap"
 
-                #browse.tab-pane.fade style="position:absolute;background-color:#fff; padding: 20px;width: 600px;height:420px;"
+                #browse.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;"
                   h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;" Browse
                   table.table.table-striped style="color:black"
                     thead
                         th 1
-                        th SSID
-                        th Password
-                        th Location
+                        th mozguest
+                        th net4roger
+                        th Seattle, WA
                     tbody
-                      tr 
+                      tr
                         th 2
-                        th SSID
-                        th Password
+                        th other
+                        th other123
                         th Location
                       tr
                         th 3
-                        th SSID
-                        th Password
+                        th other
+                        th other123
                         th Location
-                      tr 
+                      tr
                         th 4
-                        th SSID
-                        th Password
+                        th other
+                        th other123
                         th Location
-                #search.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;width: 600px;height:440px;"
+                #search.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;"
                   h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;" Search
-                  img src="http://sites.psu.edu/leadership/wp-content/uploads/sites/8069/2014/06/under-development.jpg" style="height:380px;width: 580px"
-                #create.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;width: 600px;height:420px;margin:auto;"
-                  br
-                	br
-                  br
+                  p Some content in menu 2.
+                #create.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;width:300px;height:80%;"
                   a href="/create"
                     button.btn.btn-info
                       o create
 
-                  
-                
+
+
     script src="gmaps/jsapi"
-    script src="/js/jquery.min.js" 
+    script src="/js/jquery.min.js"
 
     script src="/js/jquery.min.js"
     javascript:
