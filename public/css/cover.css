@@ -48,7 +48,7 @@ a:hover {
 .sideBar{
     margin-bottom: 100px;
     display:inline-block;
-    text-decoration: !important none;
+    text-decoration: none !important;
 }
 
 .dboardMain {
@@ -111,6 +111,7 @@ a:hover {
 }
 
 .masthead-brand {
+  text-shadow: none;
   margin-bottom: 0;
 }
 

@@ -1,5 +1,5 @@
 doctype html
-html lang="en" 
+html lang="en"
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta charset="utf-8" /
@@ -14,44 +14,8 @@ html lang="en"
     /! Custom styles for this template
     link href="css/cover.css" rel="stylesheet" /
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src="js/ie10-viewport-bug-workaround.js" 
+    script src="js/ie10-viewport-bug-workaround.js"
     css:
-      a {
-        text-decoration: none !important;
-      }
-      .inner-network {
-        width: 80%;
-        height: 40px;
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 8px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        border-radius: 0px;
-      }
-      .inner-network:hover {
-        background-color: #505050;
-      }
-      .inner-separator {
-        width: 79%;
-        height: 1px;
-        background-color: #333;
-        margin: auto;
-      }
-      .inner-frame {
-        text-shadow: none;
-        padding: 13px;
-        background-color: #fff;
-        color: #333;
-        width: 100%;
-        height: 350px;
-        border-radius: 0px;
-        margin: auto;
-        text-align: center;
-      }
       input {
         resize: none;
         outline: none;
@@ -66,8 +30,8 @@ html lang="en"
         height: 35px;
         background-color: #fff;
         color: #333;
-        border-radius: 0px;
-      }
+        border-radius: 10px;
+        }
       #submit:hover {
         background-color: #BCBCBC;
       }
@@ -85,27 +49,26 @@ html lang="en"
                 a.nav-link href=("/Cover Template for Bootstrap.html")  Features
                 a.nav-link href=("/Cover Template for Bootstrap.html")  Contact
           .inner.cover
-            .inner-frame
+            h3.cover-heading
+              | Create an Account
+            form action="/dashboard" method="post"
+              input#email name="email" placeholder="Email" required="true" type="email" /
               br/
-              h3.inner-username
-                b User12345
-              p#inner-verficiation.inner-verification
-                i Verified | 45 Networks Posted
-              .inner-separator
+              input#username maxlength="15" minlength="3" name="username" placeholder="Username" required="true" type="text" /
               br/
-              a href="#Network1" /
-              .inner-network Network1
-              a href="#Network2" /
-              .inner-network Network2
-              a href="#Network3" /
-              .inner-network Network3
-              a href="#Network4" /
-              .inner-network Network4
-    /! Bootstrap core JavaScript==================================================
+              input#firstname maxlength="20" minlength="2" name="firstname" placeholder=("First Name") required="true" type="text" /
+              br/
+              input#password maxlength="15" minlength="6" name="password" placeholder="Password" required="true" type="password" /
+              br/
+              br/
+              input#submit type="submit" value=("Sign Up") /
+    /!
+      | | Bootstrap core JavaScript
+      | | \==================================================
     /! Placed at the end of the document so the pages load faster
-    script src="js/jquery.min.js" 
+    script src="js/jquery.min.js"
     javascript:
       window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    script src="js/bootstrap.min.js" 
+    script src="public/js/bootstrap.min.js"
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src="js/ie10-viewport-bug-workaround.js" 
+    script src="public/js/ie10-viewport-bug-workaround.js"
