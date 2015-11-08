@@ -1,5 +1,5 @@
 doctype html
-html lang="en" 
+html lang="en"
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     meta charset="utf-8" /
@@ -9,7 +9,7 @@ html lang="en"
     meta content="" name="author" /
     link href="images/s" /
     doctype html
-    html lang="en" 
+    html lang="en"
       head
         meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
         meta charset="utf-8" /
@@ -24,7 +24,7 @@ html lang="en"
         /! Custom styles for this template
         link href="css/cover.css" rel="stylesheet" /
         /! IE10 viewport hack for Surface/desktop Windows 8 bug
-        script src="js/ie10-viewport-bug-workaround.js" 
+        script src="js/ie10-viewport-bug-workaround.js"
         css:
           input, textarea {
             resize: none;
@@ -64,14 +64,14 @@ html lang="en"
               .inner.cover
                 h3.cover-heading
                   | Share a Network
-                form#createform action="/dashboard" method="post" 
-                  input#ssid maxlength="40" minlength="0" name="network[SSID]" placeholder="SSID" required="true" type="text" /
+                form#createform action="/create" method="post"
+                  input#ssid maxlength="40" minlength="0" name="network[ssid]" placeholder="SSID" required="true" type="text" /
                   br/
-                  input#password maxlength="50" minlength="0" name="network[Password]" placeholder="Password" required="true" type="text" /
+                  input#password maxlength="50" minlength="0" name="network[password]" placeholder="Password" required="true" type="text" /
                   br/
-                  input#locationname maxlength="40" minlength="0" name="network[LocationName]" placeholder=("Location Name") required="true" type="text" /
+                  input#locationname maxlength="40" minlength="0" name="network[location_name]" placeholder=("Location Name") required="true" type="text" /
                   br/
-                  textarea#comments maxlength="500" name="comments" placeholder="network[Comments]" required="false" 
+                  textarea#comments maxlength="500" name="comments" placeholder="network[comments]" required="false"
                   br/
                   br/
                   input#submit type="submit" value="Submit" /
@@ -79,12 +79,12 @@ html lang="en"
           | | | Bootstrap core JavaScript
           | | | \==================================================
         /! Placed at the end of the document so the pages load faster
-        script src="js/jquery.min.js" 
+        script src="js/jquery.min.js"
         javascript:
           | window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-        script src="public/js/bootstrap.min.js" 
+        script src="public/js/bootstrap.min.js"
         /! IE10 viewport hack for Surface/desktop Windows 8 bug
-        script src="public/js/ie10-viewport-bug-workaround.js" 
+        script src="public/js/ie10-viewport-bug-workaround.js"
     | harefilogo1.png" rel="icon" /
     title Wirefy
     /! Bootstrap core CSS
@@ -92,7 +92,7 @@ html lang="en"
     /! Custom styles for this template
     link href="css/cover.css" rel="stylesheet" /
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src="js/ie10-viewport-bug-workaround.js" 
+    script src="js/ie10-viewport-bug-workaround.js"
     css:
       | a {
         | text-decoration: none !important;
@@ -181,9 +181,9 @@ html lang="en"
               .inner-network Network4
     /! Bootstrap core JavaScript==================================================
     /! Placed at the end of the document so the pages load faster
-    script src="js/jquery.min.js" 
+    script src="js/jquery.min.js"
     javascript:
       | window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    script src="js/bootstrap.min.js" 
+    script src="js/bootstrap.min.js"
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src="js/ie10-viewport-bug-workaround.js" 
+    script src="js/ie10-viewport-bug-workaround.js"

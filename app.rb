@@ -78,13 +78,12 @@ get '/u/:user' do
 end
 
 # Post create new network
-post '/create/:id' do
-	network = Network.new(id)
-
-	if network.save
-		redirect '/networks'
+post '/create' do
+	@network = Network.new(params[:network])
+	if @network.save
+		@network.to_json
 	else
-		redirect '/create/network'
+		redirect '/create'
 	end
 end
 
