@@ -44,6 +44,9 @@ html lang="en"
                 a data-toggle="tab" href="#search"
                   div class="sideBar, search, inner-tab" style="margin:12%;"
                     divide Search
+                a data-toggle="tab" href="#create"
+                  div class="sideBar, search, inner-tab" style="margin:12%;"
+                    divide Create
                     
               div class="tab-content, dboardMain" style="position:fixed; background-color:#fff;"
                 br
@@ -109,8 +112,12 @@ html lang="en"
                         th Password
                         th Location
                 #search.tab-pane.fade style="position:absolute;"
-                  h3 search
+                  h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;" Search
                   p Some content in menu 2.
+                #create.tab-pane.fade style="position:absolute;"
+                  meta content=("0; URL='/create'") http-equiv="refresh" /
+
+                  
                 
     script src="gmaps/jsapi"
     script src="/js/jquery.min.js" 
