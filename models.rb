@@ -12,7 +12,7 @@ class User
 	property :username, String, :length => 15
 	property :name, String
 	property :password, BCryptHash
-	property :verified, Bool => false
+	property :verified, Boolean
 end
 
 class Network
