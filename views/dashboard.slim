@@ -108,8 +108,8 @@ html lang="en"
     script src="js/ie10-viewport-bug-workaround.js"
                 b.nav-link.active Welcome, #{@username || "User"}
                 a.nav-link.active href=("/logout")  Log Out
-              div style="padding-top:20%"
-              div class="dboardDiv"
+                div style="padding-top:20%"
+                div class="dboardDiv"
                 br style="font-size: 3px"
 
                 a data-toggle="tab" href="#local"
@@ -125,7 +125,7 @@ html lang="en"
                   div class="sideBar, search, inner-tab" style="margin:12%;"
                     divide Create
 
-              div class="tab-content, dboardMain" style="position:fixed; background-color:#fff;"
+                div class="tab-content, dboardMain" style="position:fixed; background-color:#fff;"
                 br
                 #local.tab-pane.fade.in.active style="position:absolute;background-color:#fff; padding: 10px;"
                   h3 style="color:black; text-align:left; font-family:'Lobster', cursive;font-size: 32px;" Local
@@ -203,4 +203,4 @@ html lang="en"
 
     script src="/js/jquery.min.js"
     javascript:
-      window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+      | window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
