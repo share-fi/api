@@ -46,7 +46,7 @@ post '/signup' do
 	if @user.save
 		redirect '/dashboard'
 	else
-		redirect 'signup'
+		redirect '/signup'
 	end
 end
 

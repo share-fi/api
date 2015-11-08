@@ -10,7 +10,7 @@ class User
 	property :id, Serial, :key => true
 	property :created_at, DateTime
 	property :email, String
-	property :username, String #, :length => 3...15
+	property :username, String, :length => 3...15
 	property :password, BCryptHash
 	property :verified, Boolean
 end
@@ -20,7 +20,7 @@ class Network
 
 	property :id, Serial, :key => true
 	property :created_at, DateTime
-	property :SSID, String #, :length => 1...32
+	property :SSID, String, :length => 1...32
 	property :password, String
 	property :location, String
 end
