@@ -10,7 +10,7 @@ enable :sessions
 
 helpers do
 	def login?
-    if session[:username].nil?
+    if session[:user].nil?
       return false
     else
       return true
@@ -39,6 +39,7 @@ end
 
 # Get dashboard
 get '/dashboard' do
+	@username = session[:username]
 	slim :dashboard
 end
 
@@ -48,17 +49,14 @@ get '/create' do
 end
 
 # Get all networks ordered
-get '/networks' do
-	content_type :json
-
+get '/browse' do
 	@networks = Network.all(:order => :created_at.desc)
-	@networks.to_json
+	slim :browse
 end
 
 post '/signup' do
 	@user = User.new(params[:user])
 	if @user.save
-		session[:username] = params[:username]
 		redirect '/dashboard'
 	else
 		redirect '/signup'
@@ -102,14 +100,13 @@ get '/n/:id' do
 end
 
 get '/logout' do
-	session[:username] = nil
+	session[:user] = nil
 	redirect '/'
 end
 
 post '/login' do
 	@users = User.all
 	@users.to_json
-	# if @users.has_key?(params[:username])
 	# 	# good shit
 	# 	user = @users[params[:username]]
 	# 	if user[:password] == BCrypt::Engine.hash_secret(params[:password])

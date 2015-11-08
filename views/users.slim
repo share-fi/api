@@ -1,3 +1,4 @@
-- @users.each do |user|
-  li
-    p #{user.username}, #{user.email}, #{user.password}
+- unless @users.nil?
+  - @users.each do |user|
+    li
+      p #{user.username}, #{user.email}, #{user.password}

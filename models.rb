@@ -11,7 +11,7 @@ class User
 	property :created_at, DateTime
 	property :email, String
 	property :username, String, :length => 3...15
-	property :password, BCryptHash
+	property :password, String # BCryptHash
 	property :verified, Boolean
 end
 
