@@ -35,25 +35,29 @@ body {
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
 
+a:hover {
+  background-color: red;
+}
+
+.sideBar{
+    margin-bottom: 100px;
+    display:inline-block;
+    text-decoration: !important none;
+}
+
+.search:hover, .local:hover, .browse:hover{
+  background-color: #666060;
+}
+
 .dboardDiv {
   float:left;
-  width=30%;
-  padding:14%;
+  width: 25%;
+  text-align: center;
   padding-bottom:80%;
   background-color:#4d4b4b;
   -moz-box-shadow:    inset 0 0 20px #000000;
   -webkit-box-shadow: inset 0 0 20px #000000;
   box-shadow:         inset 0 0 20px #000000;
-}
-
-.tableLinks {
-    display:block;
-    text-decoration:none;
-}
-
-.dboardBar {
-   margin: 60%;
-   /* bgcolor:#4d4b4b;*/
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
