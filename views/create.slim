@@ -1,9 +1,9 @@
 h1 Create
 
-form action="/networks/#{@network.id}" method="post"
+form action="/networks" method="post"
   p SSID
   input type="text" name="network[SSID]" placeholder="SSID" id="network[SSID]"
   p Password
   input type="text" name="network[password]" placeholder="******" id="network[password]"
 
-  input type="submit" value="Log In"
+  input type="submit" value="Add Network"
