@@ -1,2 +1,47 @@
-h1 Dashboard
-h2 Hello, #{@user.username}
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    meta content="" name="description" /
+    meta content="" name="author" /
+    link href="/images/sharefilogo1.png" rel="icon" /
+    title Wirefy - Dashboard
+    /! Bootstrap core CSS
+    link href="css/bootstrap.min.css" rel="stylesheet" /
+    /! Custom styles for this template
+    link href="css/cover.css" rel="stylesheet" /
+    /! IE10 viewport hack for Surface/desktop Windows 8 bug
+    script src=("public/js/ie10-viewport-bug-workaround.js") 
+  body
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          .masthead.clearfix            
+            .inner
+              img src="/images/sharefilogo1white.png" style ="float:left;padding-right:1%;width:8%;height:5%;block:inline-block"
+
+              h3.masthead-brand style="padding-top:1%" Wirefy
+              nav.nav.nav-masthead
+                b.nav-link.active Welcome, test
+                a.nav-link.active href=("/signout")  Sign Out
+              div style="padding-top:20%"
+              div class="dboardDiv"
+                table class="tableLinks"
+                    tr 
+                      td
+                        a href="#Local"
+                          Table.dboardBar Local 
+                        a href="#Browse" 
+                          Table.dboardBar Browse
+                        a href="#Search" 
+                          Table.dboardBar Search
+
+    script src="/js/jquery.min.js" 
+    javascript:
+      | window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    script src="/js/bootstrap.min.js" 
+    /! IE10 viewport hack for Surface/desktop Windows 8 bug
+    script src="/js/ie10-viewport-bug-workaround.js" 
