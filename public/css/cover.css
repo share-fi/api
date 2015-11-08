@@ -45,7 +45,7 @@ a:hover {
     text-decoration: none !important;
 }
 
-.search:hover, .local:hover, .browse:hover{
+.sideBar:hover{
   background-color: #666060;
 }
 
