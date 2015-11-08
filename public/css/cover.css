@@ -93,6 +93,7 @@ a:hover {
 }
 
 .masthead-brand {
+  text-shadow: none;
   margin-bottom: 0;
 }
 
