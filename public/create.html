@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link href="images/sharefilogo1.png" rel="icon" />
+    <title>Wirefy</title><!--Bootstrap core CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!--Custom styles for this template-->
+    <link href="css/cover.css" rel="stylesheet" />
+    <!--IE10 viewport hack for Surface/desktop Windows 8 bug-->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <style type="text/css">
+      input, textarea {
+        resize: none;
+        outline: none;
+        border: none;
+        color: #333;
+        padding: 3.3px;
+        margin: 3px;
+        width: 400px;
+      }
+      textarea {
+        height: 100px;
+      }
+      #submit {
+        width: 150px;
+        height: 35px;
+        background-color: #fff;
+        color: #333;
+        border-radius: 10px;
+        }
+      #submit:hover {
+        background-color: #BCBCBC;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <img src="images/sharefilogo1white.png" style="float:left;padding-right:1%;width:8%;height:5%;block:inline-block" />
+              <h3 class="masthead-brand">
+                Wirefy
+              </h3>
+              <nav class="nav nav-masthead">
+                <a class="nav-link active" href="/Cover Template for Bootstrap.html"> Home</a><a class="nav-link" href="/Cover Template for Bootstrap.html"> Features</a><a class="nav-link" href="/Cover Template for Bootstrap.html"> Contact</a>
+              </nav>
+            </div>
+          </div>
+          <div class="inner cover">
+            <h3 class="cover-heading">
+              Share a Network
+            </h3>
+            <form action="/dashboard" method="post" id="createform">
+              <input id="ssid" maxlength="40" minlength="0" name="ssid" placeholder="SSID" required="true" type="text" /><br />
+              <input id="password" maxlength="50" minlength="0" name="password" placeholder="Password" required="true" type="text" /><br />
+              <input id="locationname" maxlength="40" minlength="0" name="locationname" placeholder="Location Name" required="true" type="text" /><br />
+              <textarea id="comments" maxlength="500" name="comments" placeholder="Comments" required="false"></textarea><br />
+              <br /><input id="submit" type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--| | Bootstrap core JavaScript
+    | | \==================================================--><!--Placed at the end of the document so the pages load faster-->
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+      window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    </script>
+    <script src="public/js/bootstrap.min.js"></script>
+    <!--IE10 viewport hack for Surface/desktop Windows 8 bug-->
+    <script src="public/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
