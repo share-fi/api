@@ -116,6 +116,10 @@ get '/logout' do
 	redirect '/'
 end
 
+get '/error' do
+	slim :error
+end
+
 post '/login' do
 	if User.all.has_key?(params[:username])
     user = User.all[params[:username]]
