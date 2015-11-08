@@ -29,16 +29,16 @@ html lang="en"
 
               h3.masthead-brand style="padding-top:1%" Wirefy
               nav.nav.nav-masthead
-                b.nav-link.active Welcome, test
+                b.nav-link.active Welcome, #{@username}
                 a.nav-link.active href=("/logout")  Log Out
               div style="padding-top:20%"
-              div class="dboardDiv" 
+              div class="dboardDiv"
                 br style="font-size: 3px"
-                
+
                 a data-toggle="tab" href="#local"
                   div class="sideBar, local, inner-tab active" style="margin:12%;"
                     divide Local
-                a data-toggle="tab" href="#browse"
+                a data-toggle="tab" href="/browse"
                   div class="sideBar, browse, inner-tab" style="margin:12%;"
                     divide Browse
                 a data-toggle="tab" href="#search"
@@ -47,7 +47,7 @@ html lang="en"
                 a data-toggle="tab" href="#create"
                   div class="sideBar, search, inner-tab" style="margin:12%;"
                     divide Create
-                    
+
               div class="tab-content, dboardMain" style="position:fixed; background-color:#fff;"
                 br
                 #local.tab-pane.fade.in.active style="position:absolute;background-color:#fff; padding: 10px;"
@@ -66,7 +66,7 @@ html lang="en"
                              lat: position.coords.latitude,
                              lng: position.coords.longitude
                            };
-                           
+
 
                            map.setCenter(pos);
                            markOutLocation(position.coords.latitude, position.coords.latitude);
@@ -96,7 +96,7 @@ html lang="en"
                         th Password
                         th Location
                     tbody
-                      tr 
+                      tr
                         th 2
                         th SSID
                         th Password
@@ -106,7 +106,7 @@ html lang="en"
                         th SSID
                         th Password
                         th Location
-                      tr 
+                      tr
                         th 4
                         th SSID
                         th Password
@@ -119,14 +119,11 @@ html lang="en"
                     button.btn.btn-info
                       o create
 
-                  
-                
+
+
     script src="gmaps/jsapi"
-    script src="/js/jquery.min.js" 
+    script src="/js/jquery.min.js"
 
     script src="/js/jquery.min.js"
     javascript:
       | window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    script src="/js/bootstrap.min.js"
-    /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src="/js/ie10-viewport-bug-workaround.js"

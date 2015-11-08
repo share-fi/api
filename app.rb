@@ -32,6 +32,7 @@ get '/'  do
 end
 
 get '/dashboard' do
+	@username = username
 	slim :dashboard
 end
 
@@ -81,9 +82,14 @@ get '/u/:user' do
 	end
 end
 
+get '/browse' do
+	slim :browse
+end
+
 # Post create new network
 post '/create' do
 	@network = Network.new(params[:network])
+	session[:username] = @network.username
 	if @network.save
 		redirect '/browse'
 	else
@@ -111,6 +117,11 @@ get '/logout' do
 end
 
 post '/login' do
-	# FUCK EVERYTHING i hat etime crunch
-	redirect '/dashboard'
+	if userTable.has_key?(params[:username])
+    user = userTable[params[:username]]
+    if user[:passwordhash] == BCrypt::Engine.hash_secret(params[:password], user[:salt])
+      session[:username] = params[:username]
+      redirect "/"
+    end
+  end
 end
