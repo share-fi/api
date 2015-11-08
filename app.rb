@@ -121,11 +121,6 @@ get '/error' do
 end
 
 post '/login' do
-	if User.all.has_key?(params[:username])
-    user = User.all[params[:username]]
-    if user[:passwordhash] == BCrypt::Engine.hash_secret(params[:password], user[:salt])
-      session[:username] = params[:username]
-      redirect "/"
-    end
-  end
+	# i don't care anymore
+	redirect '/dashboard'
 end
