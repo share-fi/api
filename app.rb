@@ -8,6 +8,20 @@ require_relative 'models'
 # Sessions are basically going to make my life not a living hell hopefully
 enable :sessions
 
+helpers do
+	def login?
+    if session[:username].nil?
+      return false
+    else
+      return true
+    end
+  end
+
+  def username
+    return session[:username]
+  end
+end
+
 # Get index page
 get '/'  do
 	slim :index
@@ -44,6 +58,7 @@ end
 post '/signup' do
 	@user = User.new(params[:user])
 	if @user.save
+		session[:username] = params[:username]
 		redirect '/dashboard'
 	else
 		redirect '/signup'
@@ -84,4 +99,24 @@ get '/n/:id' do
 	else
 		slim :error
 	end
+end
+
+get '/logout' do
+	session[:username] = nil
+	redirect '/'
+end
+
+post '/login' do
+	@users = User.all
+	@users.to_json
+	# if @users.has_key?(params[:username])
+	# 	# good shit
+	# 	user = @users[params[:username]]
+	# 	if user[:password] == BCrypt::Engine.hash_secret(params[:password])
+	# 		session[:username] = params[:username]
+	# 		redirect '/dashboard'
+	# 	end
+	# else
+	# 	redirect '/login'
+	# end
 end
