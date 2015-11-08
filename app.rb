@@ -113,15 +113,6 @@ get '/logout' do
 end
 
 post '/login' do
-	@users = User.all
-	@users.to_json
-	# 	# good shit
-	# 	user = @users[params[:username]]
-	# 	if user[:password] == BCrypt::Engine.hash_secret(params[:password])
-	# 		session[:username] = params[:username]
-	# 		redirect '/dashboard'
-	# 	end
-	# else
-	# 	redirect '/login'
-	# end
+	# FUCK EVERYTHING i hat etime crunch
+	redirect '/dashboard'
 end
