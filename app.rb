@@ -2,34 +2,7 @@
 require 'bundler'
 Bundler.require
 
-# Setup DataMapper with a database URL. On Heroku, ENV['DATABASE_URL'] will be
-# set, when working locally this line will fall back to using SQLite in the
-# current directory.
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/development.sqlite")
-
-class User
-	include DataMapper::Resource
-
-	property :id, Serial, :key => true
-	property :created_at, DateTime
-	property :username, String, :length => 15
-	property :name, String
-end
-
-class Network
-	include DataMapper::Resource
-
-	property :id, Serial, :key => true
-	property :created_at, DateTime
-	property :SSID, String, :length => 32
-	property :password, String
-end
-
-# Tell DataMapper to finalize its modules
-DataMapper.finalize
-
-# Update database according to what's defined above
-DataMapper.auto_upgrade!
+require_relative 'models'
 
 # The fun begins
 # :-)
@@ -75,6 +48,10 @@ get '/networks' do
 	@networks.to_json
 end
 
+post '/dashboard' do
+  "kill me"
+end
+
 # Get user profile
 get '/u/:user' do
 	@user = User.get(user)
@@ -86,8 +63,8 @@ get '/u/:user' do
 end
 
 # Post create new network
-post '/create/:network' do
-	network = Network.new(network)
+post '/create/:id' do
+	network = Network.new(id)
 
 	if network.save
 		redirect '/networks'
