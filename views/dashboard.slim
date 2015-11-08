@@ -29,15 +29,26 @@ html lang="en"
                 a.nav-link.active href=("/signout")  Sign Out
               div style="padding-top:20%"
               div class="dboardDiv"
-                a href="#local"
+                a data-toggle="tab" href="#local"
                   div class="sideBar, local" style="margin:12%;"
                     divide Local
-                a href="#browse"
+                a data-toggle="tab" href="#browse"
                   div class="sideBar, browse" style="margin:12%;"
                     divide Browse
-                a href="search"
+                a data-toggle="tab" href="#search"
                   div class="sideBar, search" style="margin:12%;"
                     divide Search
+                    
+              .tab-content
+                #local.tab-pane.fade.in.active
+                  h3 HOME
+                  p Some content.
+                #browse.tab-pane.fade
+                  h3 Menu 1
+                  p Some content in menu 1.
+                #search.tab-pane.fade
+                  h3 Menu 2
+                  p Some content in menu 2.
 
     script src="/js/jquery.min.js" 
     javascript:
