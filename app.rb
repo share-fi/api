@@ -2,7 +2,25 @@
 require 'bundler'
 Bundler.require
 
+# Models is in another file because it doesn't belong here
 require_relative 'models'
+
+# Sessions are basically going to make my life not a living hell hopefully
+enable :sessions
+
+helpers do
+	def login?
+    if session[:user].nil?
+      return false
+    else
+      return true
+    end
+  end
+
+  def username
+    return session[:username]
+  end
+end
 
 # Get index page
 get '/'  do
@@ -15,13 +33,6 @@ end
 
 # Get Sign up Page
 get '/signup' do
-	# Criteria
-	# - username
-	# - first name
-	# - email
-	# - password
-	# ------------
-	# Also criteria from /create
 	slim :signup
 end
 
@@ -30,29 +41,30 @@ get '/login' do
 	slim :login
 end
 
+# Get dashboard
+get '/dashboard' do
+	@username = session[:username]
+	slim :dashboard
+end
+
 # Get create new network page
 get '/create' do
-	authorize!('/login')
-	# Criteria
-	# - SSID
-	# - network password
-	# - location "in english"
-	# - location via HTML5 Geolocation
-	# - notes(?)
 	slim :create
 end
 
 # Get all networks ordered
-get '/networks' do
-	authorize!('/login')
-	content_type :json
-
+get '/browse' do
 	@networks = Network.all(:order => :created_at.desc)
-	@networks.to_json
+	slim :browse
 end
 
-post '/dashboard' do
-	"kill me"
+post '/signup' do
+	@user = User.new(params[:user])
+	if @user.save
+		redirect '/dashboard'
+	else
+		redirect '/signup'
+	end
 end
 
 # Get user profile
@@ -76,13 +88,36 @@ post '/create/:id' do
 	end
 end
 
+get '/users' do
+	@users = User.all
+	slim :users
+end
+
 # Get network via unique ID
 get '/n/:id' do
-	authorize!('/login')
 	@network = Network.get(id)
 	if @network
 		slim :network
 	else
 		slim :error
 	end
+end
+
+get '/logout' do
+	session[:user] = nil
+	redirect '/'
+end
+
+post '/login' do
+	@users = User.all
+	@users.to_json
+	# 	# good shit
+	# 	user = @users[params[:username]]
+	# 	if user[:password] == BCrypt::Engine.hash_secret(params[:password])
+	# 		session[:username] = params[:username]
+	# 		redirect '/dashboard'
+	# 	end
+	# else
+	# 	redirect '/login'
+	# end
 end
