@@ -32,7 +32,7 @@ get '/'  do
 end
 
 get '/dashboard' do
-	slim :dashboard
+	slim :dashboard4
 end
 
 # Get Sign up Page
@@ -129,3 +129,4 @@ post '/login' do
 	# 	redirect '/login'
 	# end
 end
+
