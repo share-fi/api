@@ -23,7 +23,9 @@ class Network
 	property :ssid, String, :length => 1...32
 	property :password, String
 	property :location_name, String
-	property :notes, String
+	property :comments, String
+	property :longitude, String
+	property :latitude, String
 end
 
 # Let DataMapper know to finalize its modules and update the database

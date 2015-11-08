@@ -25,6 +25,8 @@ html lang="en"
         link href="css/cover.css" rel="stylesheet" /
         /! IE10 viewport hack for Surface/desktop Windows 8 bug
         script src="js/ie10-viewport-bug-workaround.js"
+        script src="js/geo.js"
+        script src="js/maps.js"
         css:
           input, textarea {
             resize: none;
@@ -64,24 +66,20 @@ html lang="en"
                 h3.cover-heading
                   | Share a Network
                 form#createform action="/create" method="post"
-                  input#ssid maxlength="40" minlength="0" name="network[ssid]" placeholder="SSID" required="true" type="text" /
+                  input#ssid maxlength="40" minlength="0" name="network[ssid]" placeholder="SSID" required="false" type="text" /
                   br/
-                  input#password maxlength="50" minlength="0" name="network[password]" placeholder="Password" required="true" type="text" /
+                  input#password maxlength="50" minlength="0" name="network[password]" placeholder="Password" required="false" type="text" /
                   br/
-                  input#locationname maxlength="40" minlength="0" name="network[location_name]" placeholder=("Location Name") required="true" type="text" /
+                  input#locationname maxlength="40" minlength="0" name="network[location_name]" placeholder=("Location Name") required="false" type="text" /
                   br/
                   textarea#comments maxlength="500" name="network[comments]" placeholder="Comments" required="false"
                   br/
-                  textarea#comments maxlength="500" name="network[longitude]" placeholder="longitude" required="false"
+                  textarea#longitude maxlength="500" name="network[longitude]" 47.6061756
                   br/
-                  textarea#comments maxlength="500" name="network[latitude]" placeholder="latitude" required="false"
+                  textarea#latitude maxlength="500" name="network[latitude]" -122.3357196
                   br/
                   br/
                   input#submit type="submit" value="Submit" /
-        /!
-          | | | Bootstrap core JavaScript
-          | | | \==================================================
-        /! Placed at the end of the document so the pages load faster
         script src="js/jquery.min.js"
         javascript:
-          | window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+          window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')

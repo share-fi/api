@@ -88,9 +88,8 @@ end
 
 # Post create new network
 post '/create' do
-	@network = Network.new(params[:network])
-	session[:username] = @network.username
-	if @network.save
+	@net = Network.new(params[:network])
+	if @net.save
 		redirect '/browse'
 	else
 		redirect '/create'
