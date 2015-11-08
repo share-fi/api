@@ -9,6 +9,10 @@ get '/'  do
 	slim :index
 end
 
+get '/dashboard' do
+	slim :dashboard
+end
+
 # Get Sign up Page
 get '/signup' do
 	# Criteria
