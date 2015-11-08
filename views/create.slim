@@ -1,9 +1,189 @@
-h1 Create
-
-form action="/networks" method="post"
-  p SSID
-  input type="text" name="network[SSID]" placeholder="SSID" id="network[SSID]"
-  p Password
-  input type="text" name="network[password]" placeholder="******" id="network[password]"
-
-  input type="submit" value="Add Network"
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    meta content="" name="description" /
+    meta content="" name="author" /
+    link href="images/s" /
+    doctype html
+    html lang="en" 
+      head
+        meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+        meta charset="utf-8" /
+        meta content="IE=edge" http-equiv="X-UA-Compatible" /
+        meta content="width=device-width, initial-scale=1" name="viewport" /
+        meta content="" name="description" /
+        meta content="" name="author" /
+        link href="images/sharefilogo1.png" rel="icon" /
+        title Wirefy
+        /! Bootstrap core CSS
+        link href="css/bootstrap.min.css" rel="stylesheet" /
+        /! Custom styles for this template
+        link href="css/cover.css" rel="stylesheet" /
+        /! IE10 viewport hack for Surface/desktop Windows 8 bug
+        script src="js/ie10-viewport-bug-workaround.js" 
+        css:
+          input, textarea {
+            resize: none;
+            outline: none;
+            border: none;
+            color: #333;
+            padding: 3.3px;
+            margin: 3px;
+            width: 400px;
+          }
+          textarea {
+            height: 100px;
+          }
+          #submit {
+            width: 150px;
+            height: 35px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 0px;
+            }
+          #submit:hover {
+            background-color: #BCBCBC;
+          }
+      body
+        .site-wrapper
+          .site-wrapper-inner
+            .cover-container
+              .masthead.clearfix
+                .inner
+                  img src="images/sharefilogo1white.png" style="float:left;padding-right:1%;width:8%;height:5%;block:inline-block" /
+                  h3.masthead-brand
+                    | Wirefy
+                  nav.nav.nav-masthead
+                    a.nav-link.active href=("/Cover Template for Bootstrap.html")  Home
+                    a.nav-link href=("/Cover Template for Bootstrap.html")  Features
+                    a.nav-link href=("/Cover Template for Bootstrap.html")  Contact
+              .inner.cover
+                h3.cover-heading
+                  | Share a Network
+                form#createform action="/dashboard" method="post" 
+                  input#ssid maxlength="40" minlength="0" name="network[SSID]" placeholder="SSID" required="true" type="text" /
+                  br/
+                  input#password maxlength="50" minlength="0" name="network[Password]" placeholder="Password" required="true" type="text" /
+                  br/
+                  input#locationname maxlength="40" minlength="0" name="network[LocationName]" placeholder=("Location Name") required="true" type="text" /
+                  br/
+                  textarea#comments maxlength="500" name="comments" placeholder="network[Comments]" required="false" 
+                  br/
+                  br/
+                  input#submit type="submit" value="Submit" /
+        /!
+          | | | Bootstrap core JavaScript
+          | | | \==================================================
+        /! Placed at the end of the document so the pages load faster
+        script src="js/jquery.min.js" 
+        javascript:
+          | window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+        script src="public/js/bootstrap.min.js" 
+        /! IE10 viewport hack for Surface/desktop Windows 8 bug
+        script src="public/js/ie10-viewport-bug-workaround.js" 
+    | harefilogo1.png" rel="icon" /
+    title Wirefy
+    /! Bootstrap core CSS
+    link href="css/bootstrap.min.css" rel="stylesheet" /
+    /! Custom styles for this template
+    link href="css/cover.css" rel="stylesheet" /
+    /! IE10 viewport hack for Surface/desktop Windows 8 bug
+    script src="js/ie10-viewport-bug-workaround.js" 
+    css:
+      | a {
+        | text-decoration: none !important;
+      | }
+      .inner-network {
+        | width: 80%;
+        | height: 40px;
+        | background-color: #333;
+        | color: #fff;
+        | text-align: center;
+        | padding: 8px;
+        | margin-left: auto;
+        | margin-right: auto;
+        | margin-top: 5px;
+        | margin-bottom: 5px;
+        | border-radius: 6px;
+      | }
+      .inner-network:hover {
+        | background-color: #505050;
+      | }
+      .inner-separator {
+        | width: 79%;
+        | height: 1px;
+        | background-color: #333;
+        | margin: auto;
+      | }
+      .inner-frame {
+        | text-shadow: none;
+        | padding: 13px;
+        | background-color: #fff;
+        | color: #333;
+        | width: 100%;
+        | height: 350px;
+        | border-radius: 15px;
+        | margin: auto;
+        | text-align: center;
+      | }
+      | input {
+        | resize: none;
+        | outline: none;
+        | border: none;
+        | color: #333;
+        | padding: 3.3px;
+        | margin: 3px;
+        | width: 400px;
+      | }
+      #submit {
+        | width: 150px;
+        | height: 35px;
+        | background-color: #fff;
+        | color: #333;
+        | border-radius: 10px;
+      | }
+      #submit:hover {
+        | background-color: #BCBCBC;
+      | }
+  body
+    .site-wrapper
+      .site-wrapper-inner
+        .cover-container
+          .masthead.clearfix
+            .inner
+              img src="images/sharefilogo1white.png" style="float:left;padding-right:1%;width:8%;height:5%;block:inline-block" /
+              h3.masthead-brand
+                | Wirefy
+              nav.nav.nav-masthead
+                a.nav-link.active href=("/Cover Template for Bootstrap.html")  Home
+                a.nav-link href=("/Cover Template for Bootstrap.html")  Features
+                a.nav-link href=("/Cover Template for Bootstrap.html")  Contact
+          .inner.cover
+            .inner-frame
+              br/
+              h3.inner-username
+                b User12345
+              p#inner-verficiation.inner-verification
+                i Verified | 45 Networks Posted
+              .inner-separator
+              br/
+              a href="#Network1" /
+              .inner-network Network1
+              a href="#Network2" /
+              .inner-network Network2
+              a href="#Network3" /
+              .inner-network Network3
+              a href="#Network4" /
+              .inner-network Network4
+    /! Bootstrap core JavaScript==================================================
+    /! Placed at the end of the document so the pages load faster
+    script src="js/jquery.min.js" 
+    javascript:
+      | window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    script src="js/bootstrap.min.js" 
+    /! IE10 viewport hack for Surface/desktop Windows 8 bug
+    script src="js/ie10-viewport-bug-workaround.js" 
