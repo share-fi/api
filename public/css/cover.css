@@ -52,7 +52,6 @@ a:hover {
 .dboardDiv {
   float:left;
   width: 25%;
-  height: 85%;
   text-align: center;
   padding-bottom:80%;
   background-color:#4d4b4b;
@@ -94,6 +93,7 @@ a:hover {
 }
 
 .masthead-brand {
+  text-shadow: none;
   margin-bottom: 0;
 }
 
