@@ -93,6 +93,10 @@ get '/users' do
 	slim :users
 end
 
+get '/search' do
+	slim :search
+end
+
 # Get network via unique ID
 get '/n/:id' do
 	@network = Network.get(id)
