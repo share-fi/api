@@ -1,6 +1,11 @@
 # wirefy
 the social network that keeps on giving
 
+<<<<<<< HEAD
+have you ever wanted a wifi password but don't have the wifi password? well now you can have the wifi password :-)
+
+GMaps Api Key: AIzaSyD82bQbek9pGpOGd7QKv9iJfEwkd8QygJA
+=======
 have you ever wanted a wifi password but don't have the wifi password?
 well now you can have the wifi password :-)
 
@@ -11,3 +16,4 @@ cd wirefy
 bundle install # gem install bundler if you don't already have it
 ruby app.rb # browse to localhost:4567 :-)
 ```
+>>>>>>> master
