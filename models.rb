@@ -9,8 +9,8 @@ class User
 
 	property :id, Serial, :key => true
 	property :created_at, DateTime
-	property :username, String, :length => 15
-	property :name, String
+	property :email, String
+	property :username, String #, :length => 3...15
 	property :password, BCryptHash
 	property :verified, Boolean
 end
@@ -20,12 +20,10 @@ class Network
 
 	property :id, Serial, :key => true
 	property :created_at, DateTime
-	property :SSID, String, :length => 32
+	property :SSID, String #, :length => 1...32
 	property :password, String
+	property :location, String
 end
 
-# Tell DataMapper to finalize its modules
-DataMapper.finalize
-
-# Update database according to what's defined above
-DataMapper.auto_upgrade!
+# Let DataMapper know to finalize its modules and update the database
+DataMapper.finalize.auto_upgrade!

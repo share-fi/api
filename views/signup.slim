@@ -51,17 +51,15 @@ html lang="en"
           .inner.cover
             h3.cover-heading
               | Create an Account
-            form action="/dashboard" method="post"
-              input#email name="email" placeholder="Email" required="true" type="email" /
-              br/
-              input#username maxlength="15" minlength="3" name="username" placeholder="Username" required="true" type="text" /
-              br/
-              input#firstname maxlength="20" minlength="2" name="firstname" placeholder=("First Name") required="true" type="text" /
-              br/
-              input#password maxlength="15" minlength="6" name="password" placeholder="Password" required="true" type="password" /
-              br/
-              br/
-              input#submit type="submit" value=("Sign Up") /
+            form action="/signup" method="post"
+              input#email name="user[email]" placeholder="Email" required="true" type="text"
+              br
+              input#username maxlength="15" minlength="3" name="user[username]" placeholder="Username" required="true" type="text"
+              br
+              input#password maxlength="15" name="user[password]" placeholder="Password" required="true" type="password"
+              br
+              br
+              input#submit type="submit" value=("Sign Up")
     /!
       | | Bootstrap core JavaScript
       | | \==================================================

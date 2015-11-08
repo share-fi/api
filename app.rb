@@ -2,7 +2,11 @@
 require 'bundler'
 Bundler.require
 
+# Models is in another file because it doesn't belong here
 require_relative 'models'
+
+# Sessions are basically going to make my life not a living hell hopefully
+enable :sessions
 
 # Get index page
 get '/'  do
@@ -11,13 +15,6 @@ end
 
 # Get Sign up Page
 get '/signup' do
-	# Criteria
-	# - username
-	# - first name
-	# - email
-	# - password
-	# ------------
-	# Also criteria from /create
 	slim :signup
 end
 
@@ -26,29 +23,31 @@ get '/login' do
 	slim :login
 end
 
+# Get dashboard
+get '/dashboard' do
+	slim :dashboard
+end
+
 # Get create new network page
 get '/create' do
-	authorize!('/login')
-	# Criteria
-	# - SSID
-	# - network password
-	# - location "in english"
-	# - location via HTML5 Geolocation
-	# - notes(?)
 	slim :create
 end
 
 # Get all networks ordered
 get '/networks' do
-	authorize!('/login')
 	content_type :json
 
 	@networks = Network.all(:order => :created_at.desc)
 	@networks.to_json
 end
 
-post '/dashboard' do
-	"kill me"
+post '/signup' do
+	@user = User.new(params[:user])
+	if @user.save
+		redirect '/dashboard'
+	else
+		redirect 'signup'
+	end
 end
 
 # Get user profile
@@ -74,7 +73,6 @@ end
 
 # Get network via unique ID
 get '/n/:id' do
-	authorize!('/login')
 	@network = Network.get(id)
 	if @network
 		slim :network
