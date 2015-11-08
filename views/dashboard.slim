@@ -28,7 +28,7 @@ html lang="en"
                 b.nav-link.active Welcome, test
                 a.nav-link.active href=("/signout")  Sign Out
               div style="padding-top:20%"
-              div class="dboardDiv"
+              div class="dboardDiv" 
                 a data-toggle="tab" href="#local"
                   div class="sideBar, local" style="margin:12%;"
                     divide Local
@@ -39,16 +39,18 @@ html lang="en"
                   div class="sideBar, search" style="margin:12%;"
                     divide Search
                     
-              .tab-content
-                #local.tab-pane.fade.in.active
-                  h3 HOME
+              div class="tab-content, dboardMain" style="position:fixed;"
+                br
+                #local.tab-pane.fade.in.active style="position:absolute;"
+                  h3 local
                   p Some content.
-                #browse.tab-pane.fade
-                  h3 Menu 1
+                #browse.tab-pane.fade style="position:absolute;"
+                  h3 browse
                   p Some content in menu 1.
-                #search.tab-pane.fade
-                  h3 Menu 2
+                #search.tab-pane.fade style="position:absolute;"
+                  h3 search
                   p Some content in menu 2.
+                
 
     script src="/js/jquery.min.js" 
     javascript:

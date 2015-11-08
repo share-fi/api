@@ -45,19 +45,26 @@ a:hover {
     text-decoration: !important none;
 }
 
+.dboardMain {
+  background-color: #888181;
+  z-index: 1;
+  padding-bottom: 80%;
+  margin-left:25%;
+}
+
+
 .search:hover, .local:hover, .browse:hover{
   background-color: #666060;
 }
 
 .dboardDiv {
+  z-index: 1;
+  position: absolute;
   float:left;
   width: 25%;
   text-align: center;
   padding-bottom:80%;
-  background-color:#4d4b4b;
-  -moz-box-shadow:    inset 0 0 20px #000000;
-  -webkit-box-shadow: inset 0 0 20px #000000;
-  box-shadow:         inset 0 0 20px #000000;
+  /*background-color:#4d4b4b;*/
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
