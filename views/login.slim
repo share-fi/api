@@ -50,16 +50,14 @@ html lang="en"
                 a.nav-link href=("/Cover Template for Bootstrap.html")  Contact
           .inner.cover
             h3.cover-heading
-              | Create an Account
-            form action="/signup" method="post"
-              input#email name="user[email]" placeholder="Email" required="true" type="email"
+              | Login
+            form action="/login" method="post"
+              input type="text" name="user[username]" placeholder="Username" id="user[username]"
               br
-              input#username maxlength="15" minlength="3" name="user[username]" placeholder="Username" required="true" type="text"
-              br
-              input#password name="user[password]" placeholder="Password" required="true" type="password"
+              input type="password" name="user[password]" placeholder="Password" id="user[username]"
               br
               br
-              input#submit type="submit" value=("Sign Up")
+              input type="submit" value=("Login")
     /!
       | | Bootstrap core JavaScript
       | | \==================================================
