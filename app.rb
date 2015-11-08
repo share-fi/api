@@ -1,112 +1,124 @@
 # Require all gems in Gemfile :-)
-require 'bundler'
-Bundler.require
+require 'sinatra'
+require 'sinatra_warden'
+require 'dm-sqlite-adapter'
+require 'data_mapper'
+require 'slim'
+require 'bcrypt'
+
 
 # Models is in another file because it doesn't belong here
 require_relative 'models'
 
-# Sessions are basically going to make my life not a living hell hopefully
-enable :sessions
+class Wirefy < Sinatra::Base
 
-helpers do
-	def login?
-    if session[:user].nil?
-      return false
-    else
-      return true
-    end
+	use Rack::Session::Cookie
+
+	use Warden::Manager do |manager|
+    manager.default_strategies :password
+    manager.failure_app = MyApplication
   end
 
-  def username
-    return session[:username]
-  end
-end
+	# Sessions are basically going to make my life not a living hell hopefully
+	enable :sessions
 
-# Get index page
-get '/'  do
-	slim :index
-end
+	helpers do
+		def login?
+	    if session[:user].nil?
+	      return false
+	    else
+	      return true
+	    end
+	  end
 
-get '/dashboard' do
-	slim :dashboard
-end
+	  def username
+	    return session[:username]
+	  end
+	end
 
-# Get Sign up Page
-get '/signup' do
-	slim :signup
-end
+	# Get index page
+	get '/'  do
+		slim :index
+	end
 
-# Get Login Page
-get '/login' do
-	slim :login
-end
+	# Get Sign up Page
+	get '/signup' do
+		slim :signup
+	end
 
-# Get dashboard
-get '/dashboard' do
-	@username = session[:username]
-	slim :dashboard
-end
+	# Get Login Page
+	get '/login' do
+		slim :login
+	end
 
-# Get create new network page
-get '/create' do
-	slim :create
-end
+	# Get dashboard
+	get '/dashboard' do
+		@username = session[:username]
+		slim :dashboard
+	end
 
-# Get all networks ordered
-get '/browse' do
-	@networks = Network.all(:order => :created_at.desc)
-	slim :browse
-end
+	# Get create new network page
+	get '/create' do
+		slim :create
+	end
 
-post '/signup' do
-	@user = User.new(params[:user])
-	if @user.save
+	# Get all networks ordered
+	get '/browse' do
+		@networks = Network.all(:order => :created_at.desc)
+		slim :browse
+	end
+
+	post '/signup' do
+		@user = User.new(params[:user])
+		if @user.save
+			redirect '/dashboard'
+		else
+			redirect '/signup'
+		end
+	end
+
+	# Get user profile
+	get '/u/:user' do
+		@user = User.get(user)
+		if @user
+			slim :user
+		else
+			slim :error
+		end
+	end
+
+	# Post create new network
+	post '/create' do
+		@network = Network.new(params[:network])
+		if @network.save
+			redirect '/browse'
+		else
+			redirect '/create'
+		end
+	end
+
+	get '/users' do
+		@users = User.all
+		slim :users
+	end
+
+	get '/search' do
+		slim :search
+	end
+
+	# Get network via unique ID
+	get '/network' do
+		slim :network
+	end
+
+	get '/logout' do
+		session[:user] = nil
+		redirect '/'
+	end
+
+	post '/login' do
+		# FUCK EVERYTHING i hat etime crunch
 		redirect '/dashboard'
-	else
-		redirect '/signup'
 	end
-end
-
-# Get user profile
-get '/u/:user' do
-	@user = User.get(user)
-	if @user
-		slim :user
-	else
-		slim :error
-	end
-end
-
-# Post create new network
-post '/create' do
-	@network = Network.new(params[:network])
-	if @network.save
-		redirect '/browse'
-	else
-		redirect '/create'
-	end
-end
-
-get '/users' do
-	@users = User.all
-	slim :users
-end
-
-get '/search' do
-	slim :search
-end
-
-# Get network via unique ID
-get '/network' do
-	slim :network
-end
-
-get '/logout' do
-	session[:user] = nil
-	redirect '/'
-end
-
-post '/login' do
-	# FUCK EVERYTHING i hat etime crunch
-	redirect '/dashboard'
+	run!
 end
