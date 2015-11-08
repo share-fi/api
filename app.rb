@@ -97,13 +97,8 @@ get '/search' do
 end
 
 # Get network via unique ID
-get '/n/:id' do
-	@network = Network.get(id)
-	if @network
-		slim :network
-	else
-		slim :error
-	end
+get '/network' do
+	slim :network
 end
 
 get '/logout' do
