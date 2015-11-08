@@ -8,13 +8,15 @@ html lang="en"
     meta content="" name="description" /
     meta content="" name="author" /
     link href="/images/sharefilogo1.png" rel="icon" /
+    link href="gmaps/base.css" media="screen" rel="stylesheet" type="text/css" /
     title Wirefy - Dashboard
     /! Bootstrap core CSS
     link href="css/bootstrap.min.css" rel="stylesheet" /
     /! Custom styles for this template
     link href="css/cover.css" rel="stylesheet" /
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src=("public/js/ie10-viewport-bug-workaround.js") 
+    script src=("public/js/ie10-viewport-bug-workaround.js") /
+    script src="js/maps.js"
   body
     .site-wrapper
       .site-wrapper-inner
@@ -41,9 +43,9 @@ html lang="en"
                     
               div class="tab-content, dboardMain" style="position:fixed;"
                 br
-                #local.tab-pane.fade.in.active style="position:absolute;"
+                #local.tab-pane.fade.in.active style="position:absolute;background-color:red;"
                   h3 local
-                  p Some content.
+                  
                 #browse.tab-pane.fade style="position:absolute;"
                   h3 browse
                   p Some content in menu 1.
@@ -51,7 +53,7 @@ html lang="en"
                   h3 search
                   p Some content in menu 2.
                 
-
+    script src="gmaps/jsapi"
     script src="/js/jquery.min.js" 
     javascript:
       | window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')

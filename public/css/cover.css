@@ -9,6 +9,12 @@ a:hover {
   color: #fff;
 }
 
+/*#map {
+  height: 200px;
+  width: 200px
+}*/
+
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -52,6 +58,11 @@ a:hover {
   margin-left:25%;
 }
 
+#map {
+  width: 700px;
+	height: 500px;
+	margin: 50px auto;
+}
 
 .search:hover, .local:hover, .browse:hover{
   background-color: #666060;

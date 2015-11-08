@@ -5,6 +5,10 @@ Bundler.require
 require_relative 'models'
 
 # Get index page
+get '/test' do
+	slim :testingMaps
+end
+
 get '/'  do
 	slim :index
 end
