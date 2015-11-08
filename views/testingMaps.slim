@@ -1,0 +1,42 @@
+doctype html
+html style="height:100%; margin:0; padding:0;"
+  head
+    title Geolocation
+    
+    meta content="initial-scale=1.0, user-scalable=no" name="viewport" /
+    meta charset="utf-8" /
+  body style="height:100%; margin:0; padding:0;"
+    #map style="height:100%;background-color:#333;"
+    javascript:
+       function initMap() {
+         var map = new google.maps.Map(document.getElementById('map'), {
+           center: {lat: -34.397, lng: 150.644},
+           zoom: 14
+         });
+
+         if (navigator.geolocation) {
+           navigator.geolocation.getCurrentPosition(function(position) {
+             var pos = {
+               lat: position.coords.latitude,
+               lng: position.coords.longitude
+             };
+             
+
+             map.setCenter(pos);
+             markOutLocation(position.coords.latitude, position.coords.latitude);
+
+           }, function() {
+             handleLocationError(true, infoWindow, map.getCenter());
+           });
+         } else {
+           handleLocationError(false, infoWindow, map.getCenter());
+         }
+       }
+
+       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+         infoWindow.setPosition(pos);
+         infoWindow.setContent(browserHasGeolocation ?
+                               'Error: The Geolocation service failed.' :
+                               'Error: Your browser doesn\'t support geolocation.');
+       }
+    script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD82bQbek9pGpOGd7QKv9iJfEwkd8QygJA&signed_in=true&callback=initMap"

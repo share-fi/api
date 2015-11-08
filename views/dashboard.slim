@@ -7,13 +7,16 @@ html lang="en"
     meta content="width=device-width, initial-scale=1" name="viewport" /
     meta content="" name="description" /
     meta content="" name="author" /
-    link href="images/sharefilogo1.png" rel="icon" /
-    title Wirefy
+    link href="/images/sharefilogo1.png" rel="icon" /
+    link href="gmaps/base.css" media="screen" rel="stylesheet" type="text/css" /
+    link href='https://fonts.googleapis.com/css?family=Lobster|Yanone+Kaffeesatz|Fjalla+One' rel='stylesheet' type='text/css'
+    title Wirefy - Dashboard
     /! Bootstrap core CSS
     link href="css/bootstrap.min.css" rel="stylesheet" /
     /! Custom styles for this template
     link href="css/cover.css" rel="stylesheet" /
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
+<<<<<<< HEAD
     script src="js/ie10-viewport-bug-workaround.js"
     css:
       a {
@@ -72,16 +75,22 @@ html lang="en"
       #submit:hover {
         background-color: #BCBCBC;
       }
+=======
+    script src=("public/js/ie10-viewport-bug-workaround.js") /
+    script src="js/maps.js"
+    script src=("public/js/ie10-viewport-bug-workaround.js")
+>>>>>>> origin/master
   body
     .site-wrapper
       .site-wrapper-inner
         .cover-container
           .masthead.clearfix
             .inner
-              img src="images/sharefilogo1white.png" style="float:left;padding-right:1%;width:8%;height:5%;block:inline-block" /
-              h3.masthead-brand
-                | Wirefy
+              img src="/images/sharefilogo1white.png" style ="float:left;padding-right:1%;width:8%;height:5%;block:inline-block"
+
+              h3.masthead-brand style="padding-top:1%" Wirefy
               nav.nav.nav-masthead
+<<<<<<< HEAD
                 a.nav-link.active href=("/dashboard")  Home
                 a.nav-link href=("/logout")  Log Out
           .inner.cover
@@ -101,3 +110,106 @@ html lang="en"
     script src="js/bootstrap.min.js"
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
     script src="js/ie10-viewport-bug-workaround.js"
+=======
+                b.nav-link.active Welcome, test
+                a.nav-link.active href=("/logout")  Log Out
+              div style="padding-top:20%"
+              div class="dboardDiv" 
+                br style="font-size: 3px"
+                
+                a data-toggle="tab" href="#local"
+                  div class="sideBar, local, inner-tab active" style="margin:12%;"
+                    divide Local
+                a data-toggle="tab" href="#browse"
+                  div class="sideBar, browse, inner-tab" style="margin:12%;"
+                    divide Browse
+                a data-toggle="tab" href="#search"
+                  div class="sideBar, search, inner-tab" style="margin:12%;"
+                    divide Search
+                a data-toggle="tab" href="#create"
+                  div class="sideBar, search, inner-tab" style="margin:12%;"
+                    divide Create
+                    
+              div class="tab-content, dboardMain" style="position:fixed; background-color:#fff;"
+                br
+                #local.tab-pane.fade.in.active style="position:absolute;background-color:#fff; padding: 10px;"
+                  h3 style="color:black; text-align:left; font-family:'Lobster', cursive;font-size: 32px;" Local
+                  #map style="height:400px;width:600px;background-color:#333;"
+                  javascript:
+                     function initMap() {
+                       var map = new google.maps.Map(document.getElementById('map'), {
+                         center: {lat: -34.397, lng: 150.644},
+                         zoom: 14
+                       });
+
+                       if (navigator.geolocation) {
+                         navigator.geolocation.getCurrentPosition(function(position) {
+                           var pos = {
+                             lat: position.coords.latitude,
+                             lng: position.coords.longitude
+                           };
+                           
+
+                           map.setCenter(pos);
+                           markOutLocation(position.coords.latitude, position.coords.latitude);
+
+                         }, function() {
+                           handleLocationError(true, infoWindow, map.getCenter());
+                         });
+                       } else {
+                         handleLocationError(false, infoWindow, map.getCenter());
+                       }
+                     }
+
+                     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                       infoWindow.setPosition(pos);
+                       infoWindow.setContent(browserHasGeolocation ?
+                                             'Error: The Geolocation service failed.' :
+                                             'Error: Your browser doesn\'t support geolocation.');
+                     }
+                  script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD82bQbek9pGpOGd7QKv9iJfEwkd8QygJA&signed_in=true&callback=initMap"
+
+                #browse.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;"
+                  h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;" Browse
+                  table.table.table-striped style="color:black"
+                    thead
+                        th 1
+                        th SSID
+                        th Password
+                        th Location
+                    tbody
+                      tr 
+                        th 2
+                        th SSID
+                        th Password
+                        th Location
+                      tr
+                        th 3
+                        th SSID
+                        th Password
+                        th Location
+                      tr 
+                        th 4
+                        th SSID
+                        th Password
+                        th Location
+                #search.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;"
+                  h3 style="color:black; text-align:left; font-family:'Lobster',cursive;font-size: 32px;" Search
+                  p Some content in menu 2.
+                #create.tab-pane.fade style="position:absolute;background-color:#fff; padding: 10px;width:300px;height:80%;"
+                  a href="/create"
+                    button.btn.btn-info
+                      o create
+
+                  
+                
+    script src="gmaps/jsapi"
+    script src="/js/jquery.min.js" 
+
+    script src="/js/jquery.min.js"
+    javascript:
+      | window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+    script src="/js/bootstrap.min.js"
+    /! IE10 viewport hack for Surface/desktop Windows 8 bug
+    script src="/js/ie10-viewport-bug-workaround.js"
+>>>>>>> origin/master
