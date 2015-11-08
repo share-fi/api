@@ -71,6 +71,11 @@ post '/create/:id' do
 	end
 end
 
+get '/users' do
+	@users = User.all
+	slim :users
+end
+
 # Get network via unique ID
 get '/n/:id' do
 	@network = Network.get(id)
