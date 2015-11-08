@@ -19,11 +19,10 @@ a:hover {
   border: .05rem solid #fff;
 }
 
-.dboardMain {
-  float:right;
-  width:75%
-  background-color:#666060;
-}
+
+/*
+ * Base structure
+ */
 
 html,
 body {
