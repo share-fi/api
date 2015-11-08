@@ -16,6 +16,40 @@ html lang="en"
     /! IE10 viewport hack for Surface/desktop Windows 8 bug
     script src="js/ie10-viewport-bug-workaround.js"
     css:
+      a {
+        text-decoration: none !important;
+      }
+      .inner-network {
+        width: 80%;
+        height: 40px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border-radius: 0px;
+      }
+
+      .inner-separator {
+        width: 79%;
+        height: 1px;
+        background-color: #333;
+        margin: auto;
+      }
+      .inner-frame {
+        text-shadow: none;
+        padding: 13px;
+        background-color: #fff;
+        color: #333;
+        width: 100%;
+        height: 350px;
+        border-radius: 0px;
+        margin: auto;
+        text-align: center;
+      }
       input {
         resize: none;
         outline: none;
@@ -30,8 +64,8 @@ html lang="en"
         height: 35px;
         background-color: #fff;
         color: #333;
-        border-radius: 10px;
-        }
+        border-radius: 0px;
+      }
       #submit:hover {
         background-color: #BCBCBC;
       }
@@ -49,22 +83,22 @@ html lang="en"
                 a.nav-link href=("/Cover Template for Bootstrap.html")  Features
                 a.nav-link href=("/Cover Template for Bootstrap.html")  Contact
           .inner.cover
-            h3.cover-heading
-              | Login
-            form action="/login" method="post"
-              input type="text" name="user[username]" placeholder="Username" id="user[username]"
-              br
-              input type="password" name="user[password]" placeholder="Password" id="user[username]"
-              br
-              br
-              input#submit type="submit" value=("Login")
-    /!
-      | | Bootstrap core JavaScript
-      | | \==================================================
-    /! Placed at the end of the document so the pages load faster
-    script src="js/jquery.min.js"
-    javascript:
-      window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    script src="public/js/bootstrap.min.js"
-    /! IE10 viewport hack for Surface/desktop Windows 8 bug
-    script src="public/js/ie10-viewport-bug-workaround.js"
+            .inner-frame
+              br/
+              p.inner-network
+                b Network12345
+              p#inner-networkpassword.inner-networkpassword
+                i Password: Password12345
+              .inner-separator
+              br/
+              div Added by: User12345
+              div Added on: Date12345
+              div Location: Name12345
+      /! Bootstrap core JavaScript==================================================
+      /! Placed at the end of the document so the pages load faster
+      script src="js/jquery.min.js"
+      javascript:
+        window.jQuery = document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+      script src="js/bootstrap.min.js"
+      /! IE10 viewport hack for Surface/desktop Windows 8 bug
+      script src="js/ie10-viewport-bug-workaround.js"
