@@ -42,7 +42,7 @@ a:hover {
 .sideBar{
     margin-bottom: 100px;
     display:inline-block;
-    text-decoration: !important none;
+    text-decoration: none !important;
 }
 
 .search:hover, .local:hover, .browse:hover{
