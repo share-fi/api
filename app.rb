@@ -81,7 +81,7 @@ end
 post '/create' do
 	@network = Network.new(params[:network])
 	if @network.save
-		@network.to_json
+		redirect '/browse'
 	else
 		redirect '/create'
 	end

@@ -20,9 +20,10 @@ class Network
 
 	property :id, Serial, :key => true
 	property :created_at, DateTime
-	property :SSID, String, :length => 1...32
+	property :ssid, String, :length => 1...32
 	property :password, String
-	property :location, String
+	property :location_name, String
+	property :notes, String
 end
 
 # Let DataMapper know to finalize its modules and update the database
