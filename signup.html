@@ -14,6 +14,25 @@
     <link href="public/css/cover.css" rel="stylesheet" />
     <!--IE10 viewport hack for Surface/desktop Windows 8 bug-->
     <script src="public/js/ie10-viewport-bug-workaround.js"></script>
+    <style>
+    input {
+      resize: none;
+      outline: none;
+      border: none;
+      color: #333;
+      padding: 3px;
+      margin: 3px;
+      width: 400px;
+    }
+    #submit {
+      width: 100px;
+      background-color: #fff;
+      color: #333;
+    }
+    #submit:hover {
+      background-color: #BCBCBC;
+    }
+    </style>
   </head>
   <body>
     <div class="site-wrapper">
@@ -31,9 +50,16 @@
             </div>
           </div>
           <div class="inner cover">
-            <h1 class="cover-heading">
-              Sign Up
-            </h1>
+            <h3 class="cover-heading">
+              Create an Account
+            </h3>
+            <form action="/dashboard" method="post">
+              <input id="email" type="email" name="email" placeholder="Email" /><br>
+              <input id="username" type="text" name="username" minlength="3" maxlength="15" placeholder="Username" /><br>
+              <input id="firstname" type="text" name="firstname" minlength="2" maxlength="20" placeholder="First Name" /><br>
+              <input id="password" type="password" name="password" minlength="6" maxlength="15" placeholder="Password" /><br><br>
+              <input id="submit" type="submit" value="Sign Up" />
+            </form>
           </div>
         </div>
       </div>
