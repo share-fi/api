@@ -23,10 +23,6 @@ helpers do
 end
 
 # Get index page
-get '/test' do
-	slim :testingMaps
-end
-
 get '/'  do
 	slim :index
 end
@@ -36,28 +32,23 @@ get '/dashboard' do
 	slim :dashboard
 end
 
-# Get Sign up Page
 get '/signup' do
 	slim :signup
 end
 
-# Get Login Page
 get '/login' do
 	slim :login
 end
 
-# Get dashboard
 get '/dashboard' do
 	@username = session[:username]
 	slim :dashboard
 end
 
-# Get create new network page
 get '/create' do
 	slim :create
 end
 
-# Get all networks ordered
 get '/browse' do
 	@networks = Network.all(:order => :created_at.desc)
 	slim :browse
@@ -72,7 +63,6 @@ post '/signup' do
 	end
 end
 
-# Get user profile
 get '/u/:user' do
 	@user = User.get(user)
 	if @user
@@ -105,7 +95,6 @@ get '/search' do
 	slim :search
 end
 
-# Get network via unique ID
 get '/network' do
 	slim :network
 end
@@ -120,6 +109,5 @@ get '/error' do
 end
 
 post '/login' do
-	# i don't care anymore
 	redirect '/dashboard'
 end
